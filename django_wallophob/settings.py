@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
 
     # custom
-    'wallophob.apps.WallophobConfig'
+    'wallophob.apps.WallophobConfig',
 
     # pre-installed
     'django.contrib.admin',
