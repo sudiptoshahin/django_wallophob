@@ -93,11 +93,11 @@
         <ul class="navbar">
 
             <li class="nav-item">
-              <a href="#" class="nav-link">Log in</a>
+              <a href="{% url 'login' %}" class="nav-link">Log in</a>
             </li>
     
             <li class="nav-item">
-              <a href="#" class="nav-link">Signup</a>
+              <a href="{% url 'register' %}" class="nav-link">Signup</a>
             </li>
 
             <li class="nav-item">
@@ -111,6 +111,12 @@
   <!-- navigation bar ends -->
 
   <div class="container-fluid">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+
     {% block content %}
 
     {% endblock content %}

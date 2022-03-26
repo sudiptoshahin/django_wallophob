@@ -29,20 +29,22 @@
                     </svg>
                 </a>
             </div>
-            <div class="headline mt-2">Signup to WalloPhobia</div>
             <div class="content-section">
                 <form action="" method="POST">
-                    {{ form.csrf_token }}
+                    {% csrf_token %}
                    
-                    {{ form|crispy }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Join WalloPhobia</legend>
+                        {{ form|crispy }}
+                    </fieldset>
 
-                   <div class="form-group">
+                   <div class="form-group mt-2">
                        <button class="btn btn-outline-info" type="submit">Sign up</button>
                    </div>
                 </form>
             </div>
             <div class="border-top pt-3">
-                <small class="text-muted">Already have an account? <a class="ml-2" href="#">Sign in</a>
+                <small class="text-muted">Already have an account? <a class="mt-2" href="{% url 'login' %}">Sign in</a>
         
                 </small>
             </div>
