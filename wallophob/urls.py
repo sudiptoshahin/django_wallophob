@@ -5,7 +5,7 @@ from wallophob import views
 
 urlpatterns = [
     path('', views.wallophob, name='wallophob_home'),
-    path('wallophob/', views.wallophob),
+    # path('wallophob/', views.wallophob),
 
 
     # about

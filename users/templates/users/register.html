@@ -15,7 +15,7 @@
 
         <div class="container">
             <div class="logo">
-                <a href="#">
+                <a href="{% url 'wallophob_home' %}">
                     <svg width="193" height="64" viewBox="0 0 193 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="59" height="59" fill="url(#pattern0)"/>
                         <path d="M70.6135 25.412C68.9095 26.06 67.5895 27.068 66.6535 28.436C65.7175 29.78 65.2495 31.436 65.2495 33.404C65.2495 34.292 65.3335 34.916 65.5015 35.276C65.6695 35.612 65.7535 35.804 65.7535 35.852C64.4575 35.852 63.4855 35.588 62.8375 35.06C62.2135 34.508 61.9015 33.608 61.9015 32.36C61.9015 30.824 62.5255 29.336 63.7735 27.896C65.0455 26.432 66.6655 25.256 68.6335 24.368C70.6015 23.456 72.5695 23 74.5375 23C74.8735 23 75.3535 23.024 75.9775 23.072L76.3015 45.212L83.8615 23.18H88.4335L88.7575 45.212L96.3175 23.18H98.8375L88.8295 50H83.6455L83.2135 31.676L76.3735 50H71.1895L70.6135 25.412Z" fill="black"/>
@@ -30,26 +30,70 @@
                 </a>
             </div>
             <div class="content-section">
-                <form action="" method="POST">
-                    {% csrf_token %}
-                   
-                    <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">Join WalloPhobia</legend>
-                        {{ form|crispy }}
-                    </fieldset>
+                <div class="row">
+                    <div class="col-4 my-auto">
 
-                   <div class="form-group mt-2">
-                       <button class="btn btn-outline-info" type="submit">Sign up</button>
-                   </div>
-                </form>
-            </div>
-            <div class="border-top pt-3">
-                <small class="text-muted">Already have an account? <a class="mt-2" href="{% url 'login' %}">Sign in</a>
+                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="{% static 'wallophob/images/login_side_image1.jpg' %}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h6>image_label|author_name</h6>
+                                  <p>Description.....</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'wallophob/images/login_side_image2.jpg' %}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h6>image_label|author_name</h6>
+                                  <p>Description.....</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'wallophob/images/login_side_image3.jpg' %}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h6>image_label|author_name</h6>
+                                  <p>Description.....</p>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <div class="col-8">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                           
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Join WalloPhobia</legend>
+                                {{ form|crispy }}
+                            </fieldset>
         
-                </small>
+                           <div class="form-group mt-2">
+                               <button class="btn btn-outline-info" type="submit">Sign up</button>
+                           </div>
+                        </form>
+                        <div class="border-top pt-3">
+                            <small class="text-muted">Already have an account? <a class="mt-2" href="{% url 'login' %}">Sign in</a>
+                    
+                            </small>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-        </div>
 
     </div>
 
