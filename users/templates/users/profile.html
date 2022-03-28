@@ -1,0 +1,26 @@
+{% extends 'wallophob/base.html' %}
+
+{% block content %}
+
+    <div class="content-section">
+        <div class="row">
+            <div class="media d-flex justify-content-center my-auto">
+                <img src="{{ user.profile.image.url }}" alt="" class="rounded-circle account-img" height="200" width="200">
+                <div class="media-body mr-2 pt-5">
+                    <h2 class="account-heading">{{ user.username }}</h2>
+                    <div>
+                        <span class="material-icons">email</span><span class="text-secondary mb-2">{{ user.email }}</span>
+                    </div>
+                    <div>
+                        <a class="btn btn-secondary" href="">Edit profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- user uploads -->
+        </div>
+    </div>
+
+{% endblock content %}

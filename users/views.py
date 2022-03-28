@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
 from users.forms import UserRegisterForm
 from django.contrib import messages
+from django.contrib.auth.models import User
 
+
+
+# 01553280608 - zarif khondokar
 
 def register(request):
     if request.method == 'POST':
@@ -17,6 +21,17 @@ def register(request):
         'form': form
     }
     return render(request, 'users/register.html', context)
+
+def profile(request):
+
+    user = request.user
+
+    context = {
+        'user': user,
+    }
+
+    return render(request, 'users/profile.html', context)
+
 
 
 
